@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Speech.Synthesis;
+
 
 namespace FestivalGenerator
 {
@@ -11,6 +8,9 @@ namespace FestivalGenerator
     {
         static void Main(string[] args)
         {
+            SpeechSynthesizer speech = new SpeechSynthesizer();
+            speech.Speak("Welcome to the festival planner");
+
             Festival festival = new Festival();
 
             Console.WriteLine("What is the name of your festival?");
