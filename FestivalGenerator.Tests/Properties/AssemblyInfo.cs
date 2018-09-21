@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FestivalGenerator")]
+[assembly: AssemblyTitle("FestivalGenerator.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("FestivalGenerator")]
+[assembly: AssemblyProduct("FestivalGenerator.Tests")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e78b8bfe-45ea-4de6-8ca6-d7a49ae64334")]
+[assembly: Guid("9a3c27d8-308d-4a0d-ae1f-3f0e2982915d")]
 
 // Version information for an assembly consists of the following four values:
 //
