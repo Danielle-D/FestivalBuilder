@@ -53,6 +53,12 @@
     <Compile Include="FestivalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FestivalGenerator\FestivalGenerator.csproj">
+      <Project>{E78B8BFE-45EA-4DE6-8CA6-D7A49AE64334}</Project>
+      <Name>FestivalGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
