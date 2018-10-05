@@ -1,12 +1,11 @@
-﻿using System;
-using System.Speech.Synthesis;
-
-
-namespace FestivalGenerator
+﻿namespace FestivalGenerator
 {
-    class Program
+    using System;
+    using System.Speech.Synthesis;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             SpeechSynthesizer speech = new SpeechSynthesizer();
             speech.Speak("Welcome to the festival planner");

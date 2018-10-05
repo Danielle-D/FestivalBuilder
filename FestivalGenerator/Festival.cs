@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FestivalGenerator
+﻿namespace FestivalGenerator
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Festival
     {
         public Festival()
         {
-            firstDayBands = new List<string>();
+            this.firstDayBands = new List<string>();
         }
 
         public string FestivalName;
@@ -19,24 +16,24 @@ namespace FestivalGenerator
 
         public void AddBands(string bands)
         {
-            firstDayBands.Add(bands);
+            this.firstDayBands.Add(bands);
         }
 
-        public DayOfWeek StartDayCalculator(DateTime FestivalDate)
+        public DayOfWeek StartDayCalculator(DateTime festivalDate)
         {
-            var dayOfWeek = FestivalDate.DayOfWeek;
+            var dayOfWeek = festivalDate.DayOfWeek;
             return dayOfWeek;
         }
 
-        public DayOfWeek EndDayCalculator(DateTime FestivalDate, int FestivalLength)
+        public DayOfWeek EndDayCalculator(DateTime festivalDate, int festivalLength)
         {
-            var endDateDayOfWeek = FestivalDate.AddDays(FestivalLength).DayOfWeek;
+            var endDateDayOfWeek = festivalDate.AddDays(festivalLength).DayOfWeek;
             return endDateDayOfWeek;
         }
 
-        public DateTime EndDateCalculator(DateTime FestivalDate, int FestivalLength)
+        public DateTime EndDateCalculator(DateTime festivalDate, int festivalLength)
         {
-            var endDate = FestivalDate.AddDays(FestivalLength).Date;
+            var endDate = festivalDate.AddDays(festivalLength).Date;
             return endDate;
         }
 

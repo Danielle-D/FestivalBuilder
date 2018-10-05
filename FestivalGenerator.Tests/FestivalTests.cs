@@ -1,10 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-
-namespace FestivalGenerator.Tests
+﻿namespace FestivalGenerator.Tests
 {
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
+    using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+
     [TestClass]
     public class FestivalTests
     {
@@ -21,7 +21,7 @@ namespace FestivalGenerator.Tests
         {
             var expectedResult = new DateTime(2094, 02, 02).DayOfWeek;
 
-            var actualResult = festival.StartDayCalculator(new DateTime(2094,02,02));
+            var actualResult = festival.StartDayCalculator(new DateTime(2094, 02, 02));
 
             Assert.AreEqual(expectedResult, actualResult);
         }
