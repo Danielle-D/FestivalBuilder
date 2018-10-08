@@ -52,7 +52,7 @@
 
         static void WriteResult(string description, DateTime result)
         {
-            Console.WriteLine("{0}: {1}", description, result);
+            Console.WriteLine("{0}: {1:D}", description, result);
         }
 
         static void WriteResult(string description, System.DayOfWeek result)
