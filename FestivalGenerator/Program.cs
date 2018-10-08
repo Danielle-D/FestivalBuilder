@@ -52,12 +52,12 @@
 
         static void WriteResult(string description, DateTime result)
         {
-            Console.WriteLine(description + ": " + result);
+            Console.WriteLine("{0}: {1}", description, result);
         }
 
         static void WriteResult(string description, System.DayOfWeek result)
         {
-            Console.WriteLine(description + ": " + result);
+            Console.WriteLine("{0}: {1}", description, result);
         }
     }
 }
