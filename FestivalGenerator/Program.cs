@@ -42,12 +42,22 @@
             Console.WriteLine("What bands are playing on the first day?");
             festival.AddBands(Console.ReadLine());
 
-            Console.WriteLine("Your festival starts on : " + festival.StartDayCalculator(festival.FestivalDate));
-            Console.WriteLine("Your festival starts on : " + festival.FestivalDate);
-            Console.WriteLine("Your festival ends on : " +
+            WriteDayResult("Your festival starts on", festival.StartDayCalculator(festival.FestivalDate));
+            WriteDateResult("Your festival starts on", festival.FestivalDate);
+            WriteDayResult("Your festival ends on",
                               festival.EndDayCalculator(festival.FestivalDate, festival.FestivalLength));
-            Console.WriteLine("Your festival ends on : " +
+            WriteDateResult("Your festival ends on",
                               festival.EndDateCalculator(festival.FestivalDate, festival.FestivalLength));     
+        }
+
+        static void WriteDateResult(string description, DateTime result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteDayResult(string description, System.DayOfWeek result)
+        {
+            Console.WriteLine(description + " : " + result);
         }
     }
 }
