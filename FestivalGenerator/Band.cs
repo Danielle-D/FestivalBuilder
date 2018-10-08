@@ -2,6 +2,11 @@
 {
     public class Band
     {
-        public string BandName;
+        private readonly string bandName;
+
+        public Band(string BandName)
+        {
+            bandName = BandName;
+        }
     }
 }
