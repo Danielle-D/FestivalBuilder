@@ -7,37 +7,39 @@
     {
         public Festival()
         {
-            this.firstDayBands = new List<string>();
+            this.FirstDayBands = new List<string>();
         }
 
         public string FestivalName;
         public int FestivalLength;
-        public DateTime FestivalDate;
+        public DateTime FestivalStartDate;
+        public DayOfWeek StartDay;
+        public DayOfWeek EndDay;
+        public DateTime EndDate;
+        public List<string> FirstDayBands;
 
         public void AddBands(string bands)
         {
-            this.firstDayBands.Add(bands);
+            this.FirstDayBands.Add(bands);
         }
 
-        public DayOfWeek StartDayCalculator(DateTime festivalDate)
+        public DayOfWeek StartDayCalculator(DateTime festivalStartDate)
         {
-            var dayOfWeek = festivalDate.DayOfWeek;
-            return dayOfWeek;
+            StartDay = festivalStartDate.DayOfWeek;
+            return StartDay;
         }
 
-        public DayOfWeek EndDayCalculator(DateTime festivalDate, int festivalLength)
+        public DayOfWeek EndDayCalculator(DateTime festivalStartDate, int festivalLength)
         {
-            var endDateDayOfWeek = festivalDate.AddDays(festivalLength).DayOfWeek;
-            return endDateDayOfWeek;
+            EndDay = festivalStartDate.AddDays(festivalLength).DayOfWeek;
+            return EndDay;
         }
 
-        public DateTime EndDateCalculator(DateTime festivalDate, int festivalLength)
+        public DateTime EndDateCalculator(DateTime festivalStartDate, int festivalLength)
         {
-            var endDate = festivalDate.AddDays(festivalLength).Date;
-            return endDate;
+            EndDate = festivalStartDate.AddDays(festivalLength).Date;
+            return EndDate;
         }
-
-      private List<string> firstDayBands;
        
     }
 }

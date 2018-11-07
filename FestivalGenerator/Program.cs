@@ -1,7 +1,9 @@
 ﻿namespace FestivalGenerator
 {
     using System;
+    using System.IO;
     using System.Speech.Synthesis;
+    using System.Text;
 
     public class Program
     {
@@ -31,23 +33,35 @@
             }
 
             Console.WriteLine("What date does your festival start?");
-            festival.FestivalDate = Convert.ToDateTime(Console.ReadLine());
+            festival.FestivalStartDate = Convert.ToDateTime(Console.ReadLine());
 
-            if (festival.FestivalDate <= DateTime.Today)
+            if (festival.FestivalStartDate <= DateTime.Today)
             {
                 Console.WriteLine("Please renter a valid festival start date:");
-                festival.FestivalDate = Convert.ToDateTime(Console.ReadLine());
+                festival.FestivalStartDate = Convert.ToDateTime(Console.ReadLine());
             }
 
             Console.WriteLine("What bands are playing on the first day?");
             festival.AddBands(Console.ReadLine());
 
-            WriteResult("Your festival starts on", festival.StartDayCalculator(festival.FestivalDate));
-            WriteResult("Your festival starts on", festival.FestivalDate);
+            WriteResult("Your festival starts on", festival.StartDayCalculator(festival.FestivalStartDate));
+            WriteResult("Your festival starts on the", festival.FestivalStartDate);
             WriteResult("Your festival ends on",
-                              festival.EndDayCalculator(festival.FestivalDate, festival.FestivalLength));
-            WriteResult("Your festival ends on",
-                              festival.EndDateCalculator(festival.FestivalDate, festival.FestivalLength));     
+                festival.EndDayCalculator(festival.FestivalStartDate, festival.FestivalLength));
+            WriteResult("Your festival ends on the",
+                festival.EndDateCalculator(festival.FestivalStartDate, festival.FestivalLength));
+
+            StringBuilder csvStringBuilderData = new StringBuilder();
+            csvStringBuilderData.AppendLine("Festival Name,Number Of Days,Festival Start Date,Festival End Date");
+            csvStringBuilderData
+                .Append(festival.FestivalName + ",")
+                .Append(festival.FestivalLength + ",")
+                .Append(festival.StartDay + " ")
+                .Append(festival.FestivalStartDate + ",")
+                .Append(festival.EndDay + " ")
+                .Append(festival.EndDate + ",");
+            string csvPath = "C:\\CSVExport\\FestivalInformation.csv";
+            File.AppendAllText(csvPath, csvStringBuilderData.ToString());
         }
 
         static void WriteResult(string description, DateTime result)
