@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Band.cs" />
-    <Compile Include="CSVWriter.cs" />
     <Compile Include="Festival.cs" />
     <Compile Include="FestivalDayCalculator.cs" />
     <Compile Include="Program.cs" />

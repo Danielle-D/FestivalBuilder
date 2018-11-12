@@ -8,12 +8,12 @@
     [TestClass]
     public class FestivalTests
     {
-        private Festival festival;
+        private Festival _festival;
 
         [SetUp]
         public void SetUp()
         {
-            this.festival = new Festival();
+            _festival = new Festival();
         }
 
         [Test]
@@ -21,7 +21,7 @@
         {
             var expectedResult = new DateTime(2094, 02, 02).DayOfWeek;
 
-            var actualResult = festival.StartDayCalculator(new DateTime(2094, 02, 02));
+            var actualResult = _festival.StartDayCalculator(new DateTime(2094, 02, 02));
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -31,7 +31,7 @@
         {
             var expectedResult = new DateTime(2094, 01, 03).DayOfWeek;
 
-            var actualResult = festival.EndDayCalculator(new DateTime(2094, 01, 01), 2); 
+            var actualResult = _festival.EndDayCalculator(new DateTime(2094, 01, 01), 2); 
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -41,7 +41,7 @@
         {
             var expectedResult = new DateTime(2094, 01, 03);
 
-            var actualResult = festival.EndDateCalculator(new DateTime(2094, 01, 01), 2);
+            var actualResult = _festival.EndDateCalculator(new DateTime(2094, 01, 01), 2);
 
             Assert.AreEqual(expectedResult, actualResult);
         }

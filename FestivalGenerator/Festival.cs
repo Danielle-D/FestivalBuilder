@@ -7,7 +7,7 @@
     {
         public Festival()
         {
-            this.FirstDayBands = new List<string>();
+            FirstDayBands = new List<string>();
         }
 
         public string FestivalName;
@@ -20,7 +20,7 @@
 
         public void AddBands(string bands)
         {
-            this.FirstDayBands.Add(bands);
+            FirstDayBands.Add(bands);
         }
 
         public DayOfWeek StartDayCalculator(DateTime festivalStartDate)

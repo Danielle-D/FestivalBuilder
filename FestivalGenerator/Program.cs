@@ -69,7 +69,7 @@
             Console.WriteLine("{0}: {1:D}", description, result);
         }
 
-        static void WriteResult(string description, System.DayOfWeek result)
+        static void WriteResult(string description, DayOfWeek result)
         {
             Console.WriteLine("{0}: {1}", description, result);
         }
